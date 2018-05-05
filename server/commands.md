@@ -28,3 +28,14 @@ ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 firewall-cmd --permanent --zone=public --add-port=100-500/tcp
 firewall-cmd --permanent --zone=public --add-port=100-500/udp
 firewall-cmd --reload
+
+###shadowsocks wiki地址
+https://github.com/shadowsocks/shadowsocks/wiki/Shadowsocks-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E
+
+###关闭shadowsocks服务
+
+sudo ssserver -d stop
+
+###检查日志
+
+sudo less /var/log/shadowsocks.log
