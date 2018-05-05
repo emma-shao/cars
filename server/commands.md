@@ -24,6 +24,7 @@ ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 >默认配置目录 /etc/nginx/conf.d 后缀为.conf会自动加载进来
 
 ###防火墙开启批量端口命令
+
 firewall-cmd --permanent --zone=public --add-port=100-500/tcp
 firewall-cmd --permanent --zone=public --add-port=100-500/udp
 firewall-cmd --reload
