@@ -1,14 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cmn-Hans">
 <head>
-    <title>网站排期</title>
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <title>汽车平台项目</title>
+  <meta charset="utf-8">
+  <meta name="author" content="Emma">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  <div class="container">
+      <h1>汽车平台项目</h1>
+      <ul class="nav nav-tabs">
+        <li><a data-toggle="tab" href="#demand">原始需求</a></li>
+        <li><a data-toggle="tab" href="#rough">粗略预估</a></li>
+        <li class="active"><a data-toggle="tab" href="#tech">开发排期</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="demand" class="tab-pane fade">
+          <br/>
+          <pre>
+内容建设描述：
+平台主站：类似于资讯平台（汽车之家）的网站，主页主要是以信息的展示为主，主页内的内容板块根据具体情况设定；分频道包括：车展、团购、企宣、新闻等板块。
+流量入口：主要就是可以生成车展的专题页面，前端呈现的就是车展的专题内容展示和在线报名。可以将页面链接投放在各个渠道。
+企业宣传：就是类似一般的企业主站的宣传展示页面，是单独设计但可以通过后台维护的页面。
+新闻资讯公告：包括新闻、资讯、公告等内容都在这里进行展示。可通过后台CMS方式进行管理。
+其他：
+搜索：需要有搜索功能，可以对内容进行检索（并可按照地区进行检索，比如检索不同地区的车展信息或专题页）。
+车型展示：需要能够有车型库，可以对车辆进行品牌、车型、细节等内容进行定义
+会员：需要能够注册会员，并有会员个人中心
+在线客服：可接入在线客服系统，让客服人员可以对用户的问题在线解答
+其他工具类小应用：买车总费用计算器、车贷计算器、保险计算器、车型对比等
+建议通过电商网站系统进行改造。
 
-<footer>
-    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</footer>
-</body>
-</html>
+后台管理：
+车展、团购活动管理：能够根据每场车展的主题能够生成出不同的前端页面(不同的地址链接)，需要可以根据车展的类型、内容、用户填写的表单项目等内容进行单独的设定。
+统计分析：对每个页面需要有流量统计功能(可使用第三方统计代码)，需要有报名统计与分析功能，分析是比如根据ip或者手机号判断其所在省市，去重等
+推送管理：短信验证功能(可开启与关闭)、站内信推送，微信推送（绑定公众号）
+数据管理：可以对具体的会员数据、车展报名数据、团购报名等数据进行报表数据导出操作
+内容管理：采用如CMS方式管理，可对页面进行每个区块的编辑，可以对不同元素设置不同属性。
+广告管理：可以对站内的广告位进行设置
+权限管理：可以根据不同职责进行权限的设定
+
+主要就是活动报名这里需要有一些细节的控制，比如选择您想关注的品牌和该品牌的车型，然后填写姓名，手机号，手机号这里需要有短信接口，
+能够发送验证短信，但是后台可以通过开关控制是否启用短信验证功能。报名成功还需要给用户发短信提示成功，并且发送一条随机的门票验证码，
+这个验证码是一串数字英文等字符组合，可以在现场的系统里面进行验证的。(现场使用的验证功能也需要设计进去，就是验证是否是发出去的码)。
+另外就是对用户报名数据的统计，每个时段的数量，每天的数量，每周每月的数量等，而且还有判断手机号区域分布的。并且可以将数据表导出成Excel
+          </pre>
+        </div>
+        <div id="rough" class="tab-pane fade">
+          <br>
+          <pre>
+### 后台功能点【13天】
+1. 车展：专题、标题、地区、内容展示，后台编辑、前台展示 markdown编辑器【2天】
+2. 企业宣传：单独设计，可以通过后台维护，html富文本编辑，百度编辑器
+3. 新闻资讯公告：后台编辑【1天】
+4. 车型库：后台编辑 【3天】
+5. 汽车详情：名字、指导价、发动机、级别、百公里油耗、车型、变速箱、首付、地区、国别、标签、【2天】
+6. 4S店：详细未知，手动编辑吗？
+7. 数据管理：可以对具体的会员数据、车展报名数据、团购报名等数据展示进行报表数据导出操作【3天】
+8. 报名统计与分析【2天，靠后做、手机号统计ip】
+
+### 基础数据爬取【3天】
+1. 熟悉汽车之家的页面结构
+2. 品牌：logo、名字
+3. 车型：爬取汽车之家的数据、并可以自己修改
+4. 标签：
+5. 规格：
+
+### 前台展示【12天】
+1. 首页：车展、团购、企宣、新闻【2天】
+2. 城市切换【2天】
+3. 搜索：【1天】
+4. 在线报名：【2天、IP地址、地区判断、报名来源】
+5. 注册登录：【需求不明确】
+6. 在线客服：百度商桥【如果申请】
+7. 微信登录【2天】
+8. 个人中心展示【需求不明确】
+9. 其他工具类小应用：买车总费用计算器、车贷计算器、保险计算器、车型对比等【靠后做，复杂，对网站推广作用甚小 3天】
+
+          </pre>
+        </div>
+        <div id="tech" class="tab-pane fade in active table-responsive">
+          <br/>
+          <table class="table table-bordered table-hover">
+            <thead class="bg-info">
+              <th>模块</th>
+              <th>子模块</th>
+              <th>描述/疑问</th>
+              <th>时长</th>
+              <th>结束时间</th>
+            </thead>
+            <tr>
+              <td>需求确认</td>
+              <td>网站功能、呈现、责任划分</td>
+              <td></td>
+              <td>一个下午</td>
+              <td>2018-05-06</td>
+            </tr>
+            <tr>
+              <td class="bg-info" rowspan="3" style="vertical-align: middle;">基础数据爬取</td>
+              <td>
+                城市
+              </td>
+              <td></td>
+              <td rowspan="3" style="vertical-align: middle;">3天</td>
+              <td rowspan="3" style="vertical-align: middle;">2018-05-09</td>
+            </tr>
+            <tr>
+              <td>
+              过滤条件：<br/>
+              品牌、车型、车系、排量、排放标准、颜色、座位数、国别、燃料类型
+              </td>
+              <td>
+                <ul>
+                  <li>基础数据参考网站：优信二手车、汽车之家</li>
+                  <li>分析数据落入数据库，作为基础数据</li>
+                </ul>
+              </td> 
+            </tr>
+            <tr>
+              <td>
+                车辆信息:
+                图片、 全部参数、 购车须知
+              </td>
+              <td class="warning">
+                <ul>
+                  <li>是否只关注新车？没有二手车概念</li>
+                  <li>车辆的图片可能比较大，建议购买阿里云oss图片服务器</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="bg-success" rowspan="3" style="vertical-align: middle;">后台</td>
+              <td>
+                基础后台搭建：<br/>
+                后台用户登录、角色控制、权限管理
+              </td>
+              <td>开源框架 laravel+voyager</td>
+              <td style="vertical-align: middle;" rowspan="3">2天</td>
+              <td style="vertical-align: middle;" rowspan="3">2018-05-11</td>
+            </tr>
+            <tr>
+              <td style="vertical-align: middle;">
+                车展：<br/>
+                时间、地点、主办单位、咨询热线、简述<br/>
+              </td>
+              <td class="warning">
+                <ul>
+                  <li>有没有参考页面</li>
+                  <li>发布车展还是展后报道？</li>
+                  <li>有图片吗</li>
+                  <li>设计样式有吗</li>
+                  <li>
+                    车展亮点需要吗？ 比如
+                    <pre> 
+1.60家主力汽车品牌云集，300款热销车底价购车！
+2.前3000名到场签到，凭票领取豪礼一份！
+3.前1000名订车客户即送8千元装饰大礼!
+4.前1000名订车客户还送现场抽奖100%中奖无空奖
+                    </pre>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+      <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </footer>
+  </body>
+  </html>
