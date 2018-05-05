@@ -6,6 +6,9 @@
   <meta name="author" content="Emma">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+     .table>tbody>tr>td{vertical-align: middle;}
+  </style>
 </head>
 <body>
   <div class="container">
@@ -14,6 +17,7 @@
         <li><a data-toggle="tab" href="#demand">原始需求</a></li>
         <li><a data-toggle="tab" href="#rough">粗略预估</a></li>
         <li class="active"><a data-toggle="tab" href="#tech">开发排期</a></li>
+        <li><a data-toggle="tab" href="#deploy">部署上线</a></li>
       </ul>
       <div class="tab-content">
         <div id="demand" class="tab-pane fade">
@@ -80,6 +84,10 @@
 
           </pre>
         </div>
+        <div id="deploy">
+          <br>
+          <div></div>          
+        </div>
         <div id="tech" class="tab-pane fade in active table-responsive">
           <br/>
           <table class="table table-bordered table-hover">
@@ -98,13 +106,23 @@
               <td>2018-05-06</td>
             </tr>
             <tr>
-              <td class="bg-info" rowspan="3" style="vertical-align: middle;">基础数据爬取</td>
+              <td class="bg-success">初始化项目</td>
+              <td>
+                基础后台搭建：<br/>
+                后台用户登录、用户管理、角色控制、权限管理
+              </td>
+              <td>开源框架 laravel+voyager</td>
+              <td>1-2天</td>
+              <td>2018-05-09</td>
+            </tr>
+            <tr>
+              <td class="bg-info" rowspan="3">基础数据爬取</td>
               <td>
                 城市
               </td>
               <td></td>
-              <td rowspan="3" style="vertical-align: middle;">3天</td>
-              <td rowspan="3" style="vertical-align: middle;">2018-05-09</td>
+              <td rowspan="3">3-5天</td>
+              <td rowspan="3">2018-05-13</td>
             </tr>
             <tr>
               <td>
@@ -130,27 +148,17 @@
                 </ul>
               </td>
             </tr>
+
             <tr>
-              <td class="bg-success" rowspan="3" style="vertical-align: middle;">后台</td>
+              <td rowspan="3" class="bg-success">后台</td>
               <td>
-                基础后台搭建：<br/>
-                后台用户登录、角色控制、权限管理
-              </td>
-              <td>开源框架 laravel+voyager</td>
-              <td style="vertical-align: middle;" rowspan="3">2天</td>
-              <td style="vertical-align: middle;" rowspan="3">2018-05-11</td>
-            </tr>
-            <tr>
-              <td style="vertical-align: middle;">
                 车展：<br/>
-                时间、地点、主办单位、咨询热线、简述<br/>
+                时间、地点、主办单位、咨询热线、简述、车展场地、公交路线、自驾路线<br/>
+                现场图片[多图]
               </td>
               <td class="warning">
                 <ul>
-                  <li>有没有参考页面</li>
-                  <li>发布车展还是展后报道？</li>
-                  <li>有图片吗</li>
-                  <li>设计样式有吗</li>
+                  <li>参考卡盟网</li>
                   <li>
                     车展亮点需要吗？ 比如
                     <pre> 
@@ -162,8 +170,117 @@
                   </li>
                 </ul>
               </td>
+              <td>2-3天</td>
+              <td>2018-05-17</td>
             </tr>
-            <tr></tr>
+            <tr>
+              <td>团购咨询：<br/>时间、标题、内容</td>
+              <td></td>
+              <td>2-4小时</td>
+              <td>2018-05-18</td>
+            </tr>
+            <tr>
+              <td>
+                行业新闻\团购花絮：<br/>
+                标题、内容、时间、摘要、markdown编辑器
+              </td>
+              <td></td>
+              <td>2-3天</td>
+              <td>2018-05-23</td>
+            </tr>
+
+            <tr class="bg-warning">
+              <td class="bg-info" rowspan="8">前台</td>
+              <td>轮播图</td>
+              <td>需要吗？牵涉到后台维护<br/>发现卡盟网手机版页面具有，跳转地址有问题</td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>报名参观：<br/>品牌、车型、姓名、手机</td>
+              <td>
+                <ul>
+                  <li>后台管理</li>
+                  <li>报名页面</li>
+                  <li>ip地址分析地理位置</li>
+                  <li>手机分析对应的地理位置</li>
+                  <li>报表统计</li>
+                  <li>excel导出</li>
+                  <li>后台短信发送</li>
+                </ul>
+              </td>
+              <td>3-5天</td>
+              <td>2018-05-30</td>
+            </tr>
+
+            <tr>
+              <td>团购：<br/>列表、详情、后台管理发布</td>
+              <td class="bg-warning">详情页细节点非常多
+                <ul>
+                  <li>团购时间、地点、车系是后台配置的吗？是的，对应后台管理发布、统计</li>
+                  <li>服务协议、购车亮点、指导价是否复制卡盟，指导价格应该是变化的，是后台实时维护吗？</li>
+                  <li>是否有UI设计界面？</li>
+                </ul>
+              </td>
+              <td>3-5天</td>
+              <td>2018-06-04</td>
+            </tr>
+
+            <tr>
+              <td>车展公告：<br/>列表、详情</td>
+              <td>详情页非常复杂</td>
+              <td>2-3天</td>
+              <td>2018-06-09</td>
+            </tr>
+            
+            <tr>
+              <td>新闻/花絮：<br/>列表、详情</td>  
+              <td></td>
+              <td>1-2天</td>
+              <td>2-18-06-11</td>
+            </tr>
+
+            <tr>
+              <td>搜索</td>
+              <td>
+                <ul>
+                  <li>车型搜索</li>
+                  <li>车展需要搜索吗</li>
+                  <li>新闻需要搜索吗</li>
+                  <li>公告需要搜索吗</li>
+                </ul>
+              </td>
+              <td>1-2天</td>
+              <td>2018-06-14</td>
+            </tr>
+            <tr>
+              <td>登录\注册</td>
+              <td>
+                <ul>
+                  <li>手机号登录注册</li>
+                  <li>微信登录，能否提供已有的公众号管理权限</li>
+                  <li>忘记密码之后短信验证码登录</li>
+                </ul>
+              </td>
+              <td>3-4天</td>
+              <td>2018-06-19</td>
+            </tr>
+            <tr>
+              <td>小工具</td>
+              <td class="bg-warning">
+                太复杂
+                <a href="http://car.bitauto.com/gouchejisuanqi/?carid=16457" target="_blank">参考 易车购车计算器</a>
+                <ul>
+                  <li>买车总费用计算器</li>
+                  <li>车贷计算器</li>
+                  <li>保险计算器</li>
+                  <li>车型对比等？啥，有参考的吗？</li>
+                </ul>
+              </td>
+              <td>5-7天</td>
+              <td>2018-06-29</td>
+            </tr> 
           </table>
         </div>
       </div>
