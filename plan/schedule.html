@@ -21,8 +21,8 @@
       <ul class="nav nav-tabs">
         <li><a data-toggle="tab" href="#demand">原始需求</a></li>
         <li><a data-toggle="tab" href="#rough">粗略预估</a></li>
-        <li class="active"><a data-toggle="tab" href="#tech">开发排期</a></li>
-        <li><a data-toggle="tab" href="#deploy">部署上线</a></li>
+        <li><a data-toggle="tab" href="#tech">开发排期</a></li>
+        <li class="active"><a data-toggle="tab" href="#deploy">前置条件</a></li>
       </ul>
       <div class="tab-content">
         <div id="demand" class="tab-pane fade">
@@ -89,11 +89,87 @@
 
           </pre>
         </div>
-        <div id="deploy">
-          <br>
-          <div></div>          
+        <div id="deploy" class="tab-pane fade in active">
+          <br/>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+              <thead class="bg-info">
+                <th>前置条件</th>
+                <th>详细及费用</th>
+                <th>预期时长</th>
+                <th>预期完成时间</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>域名备案</td>
+                  <td>阿里云备案 比较繁琐，认证费用几百</td> 
+                  <td>15天</td>
+                  <td>2018-05-21</td>
+                </tr>
+                <tr>
+                  <td>服务器购买</td>
+                  <td>
+                    <ul>
+                      <li>
+                        云服务器ECS，企业级->通用型g5->热门配置 3年费用¥7678.8 操作系统选择centos 7.4 64位 安全加固<br/>
+                        <a href="https://www.aliyun.com/product/ecs?spm=5176.8142029.388261.260.6f756d3euE4TgG" target="_blank">购买地址</a>
+                      </li>
+                      <li> 
+                        对象存储OSS服务器一台：存储包500G ¥603<br/>
+                        <a href="https://common-buy.aliyun.com/?spm=5176.7933691.744462.pay1.18916a56Y3kMYE&commodityCode=ossbag&request=%7B%22region%22%3A%22china-common%22%7D#/buy" target="_blank">购买地址</a>
+                      </li>
+                    </ul>
+                  </td>
+                  <td>1天</td>
+                  <td>2018-05-07</td>
+                </tr>
+                <tr>
+                  <td>https证书购买</td>
+                  <td>阿里云盾证书服务：¥7544.6 <a href="https://common-buy.aliyun.com/?spm=5176.7968328.911106.btn1.68d14ebfReMFZd&commodityCode=cas#/buy" target="_blank">购买地址</a>
+                    <ul>
+                      <li>专业版OV SSL</li>
+                      <li>通配符域名</li>
+                      <li>GeoTrust</li>
+                      <li>1个</li>
+                      <li>购买时长:2年</li>
+                    </ul>
+                  </td>
+                  <td>1天</td>
+                  <td>2018-05-15</td>
+                </tr>
+                <tr>
+                  <td>微信公众号</td>
+                  <td>
+                    <li>微信商户平台是否已有？是否需要开通？开通需要认证及费用¥300/年</li>
+                    <li>微信开放平台注册账户，认证费用¥300/年</li>
+                    <li>微信公众号后台的账户密码给我下，开发微信登录需要使用</li>
+                  </td>
+                  <td>1-2周 微信自身的认证周期</td>
+                  <td>2018-05-23</td>
+                </tr>
+                <tr>
+                  <td><a href="https://www.bilibili.com/" target="_blank">bilibili B站 </a></td>
+                  <td>开通账号，上传视频，用于引流及网站互联</td>
+                  <td>1-5天</td>
+                  <td>2018-05-11</td>
+                </tr>
+                <tr>
+                  <td><a href="http://lbs.qq.com/" target="_blank">腾讯地图服务</a></td>
+                  <td>
+                    <ul>
+                      <li>注册账号并给我</li>
+                      <li>申请成为企业用户</li>
+                      <li>申请应用</li>
+                    </ul>
+                  </td>
+                  <td>1-7天</td>
+                  <td>2018-05-14</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div id="tech" class="tab-pane fade in active table-responsive">
+        <div id="tech" class="tab-pane fade table-responsive">
           <br/>
           <table class="table table-bordered table-hover">
             <thead class="bg-info">
