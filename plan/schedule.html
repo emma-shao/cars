@@ -7,11 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    body {
+      font-size: 14px;
+      /*1.4 × 10px = 14px */
+      font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+      color: #374051;
+      -webkit-font-smoothing: antialiased;
+      min-width: 1000px;
+      line-height: 1;
+    }
      .table>tbody>tr>td{vertical-align: middle;}
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container-fluid">
       <h1>汽车平台项目</h1>
       <address>
         <em>Emma</em>
@@ -21,8 +30,8 @@
       <ul class="nav nav-tabs">
         <li><a data-toggle="tab" href="#demand">原始需求</a></li>
         <li><a data-toggle="tab" href="#rough">粗略预估</a></li>
-        <li><a data-toggle="tab" href="#tech">开发排期</a></li>
-        <li class="active"><a data-toggle="tab" href="#deploy">前置条件</a></li>
+        <li class="active"><a data-toggle="tab" href="#tech">开发排期</a></li>
+        <li><a data-toggle="tab" href="#deploy">前置条件</a></li>
       </ul>
       <div class="tab-content">
         <div id="demand" class="tab-pane fade">
@@ -89,7 +98,7 @@
 
           </pre>
         </div>
-        <div id="deploy" class="tab-pane fade in active">
+        <div id="deploy" class="tab-pane fade">
           <br/>
           <div class="table-responsive">
             <table class="table table-striped table-bordered">
@@ -213,7 +222,7 @@
             </table>
           </div>
         </div>
-        <div id="tech" class="tab-pane fade table-responsive">
+        <div id="tech" class="tab-pane fade table-responsive in active">
           <br/>
           <table class="table table-bordered table-hover">
             <thead class="bg-info">
@@ -222,7 +231,8 @@
               <th>描述/疑问</th>
               <th>预期时长</th>
               <th>预期结束时间</th>
-              <td>实际完成时间</td>
+              <th>实际完成时间</th>
+              <th>技术实施</th>
             </thead>
             <tr>
               <td>需求确认</td>
@@ -244,14 +254,19 @@
               <td></td>
             </tr>
             <tr>
-              <td class="bg-info" rowspan="3">基础数据爬取</td>
+              <td class="bg-info" rowspan="3">
+                基础数据爬取
+              </td>
               <td>
                 城市
               </td>
               <td></td>
-              <td rowspan="3">3-5天</td>
-              <td rowspan="3">2018-05-13</td>
-              <td rowspan="3"></td>
+              <td>1天</td>
+              <td>2018-05-08</td>
+              <td>2018-05-07</td>
+              <td>
+                <a href="../struct/crawl.html#city">城市爬取</a>
+              </td>
             </tr>
             <tr>
               <td>
@@ -264,6 +279,12 @@
                   <li>分析数据落入数据库，作为基础数据</li>
                 </ul>
               </td> 
+              <td>2天</td>
+              <td>2018-05-10</td>
+              <td></td>
+              <td>
+                <a href="">车型爬取</a>
+              </td>
             </tr>
             <tr>
               <td>
@@ -275,6 +296,12 @@
                   <li>是否只关注新车？没有二手车概念</li>
                   <li>车辆的图片可能比较大，建议购买阿里云oss图片服务器</li>
                 </ul>
+              </td>
+              <td>3天</td>
+              <td>2018-05-13</td>
+              <td></td>
+              <td>
+                <a href="">车辆信息爬取</a>
               </td>
             </tr>
 
